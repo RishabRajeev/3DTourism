@@ -24,47 +24,62 @@ export const templeInfo = {
     'https://maduraimeenakshi.hrce.tn.gov.in/resources/docs/virtualtour/31962/index.html',
 };
 
-/** Six canonical daily poojas performed at the temple. */
+/**
+ * Six official daily poojas — timings from the HR & CE portal.
+ * Source: maduraimeenakshi.hrce.tn.gov.in (action=pooja_info)
+ */
 export const poojas = [
   {
     id: 1,
-    name: 'Thiruvanandal',
-    time: '5:30 AM',
+    name: 'Thiruvanandal Pooja',
+    tamil: 'திருவனந்தல் பூஜை',
+    subtitle: 'Mahashodashi',
+    time: '05:30 AM – 05:45 AM',
     description: 'The first pooja of the day. The presiding deities are awakened with hymns, flowers, and sacred lamps.',
     icon: '🌅',
   },
   {
     id: 2,
-    name: 'Kalaasandhi',
-    time: '8:00 AM',
-    description: 'Morning pooja with elaborate rituals, deepa aradhana, and recitation of Thirugnana Sambanda hymns.',
+    name: 'Vila Pooja',
+    tamil: 'விளா பூஜை',
+    subtitle: 'Balai',
+    time: '06:30 AM – 07:15 AM',
+    description: 'Morning pooja with elaborate rituals and deepa aradhana. Recitation of Thirugnana Sambanda hymns.',
     icon: '🪔',
   },
   {
     id: 3,
-    name: 'Uchikalam',
-    time: '10:00 AM',
-    description: 'Midday pooja performed before the temple closes at noon. Special prasadam is distributed.',
+    name: 'Kaala Sandhi Pooja',
+    tamil: 'காலசந்தி பூஜை',
+    subtitle: 'Gowri',
+    time: '10:30 AM – 11:20 AM',
+    description: 'Midday pooja performed before the temple closes. Special prasadam is distributed to devotees.',
     icon: '☀️',
   },
   {
     id: 4,
-    name: 'Sayarakshai',
-    time: '5:00 PM',
+    name: 'Malai Pooja',
+    tamil: 'மாலை பூஜை',
+    subtitle: 'Panchadasi',
+    time: '04:30 PM – 05:15 PM',
     description: 'Evening pooja marking the reopening of the temple. Includes procession of the utsava deities.',
     icon: '🌇',
   },
   {
     id: 5,
-    name: 'Ardhajaamam',
-    time: '7:00 PM',
-    description: 'The grand evening aradhana with deepa, flowers, and Thiruvempavai recitations.',
+    name: 'Ardhajama Pooja',
+    tamil: 'அர்த்தஜாம பூஜை',
+    subtitle: 'Mathangi',
+    time: '07:30 PM – 08:15 PM',
+    description: 'The grand evening aradhana with deepa, flowers, and sacred hymn recitations.',
     icon: '🌙',
   },
   {
     id: 6,
-    name: 'Palliyarai',
-    time: '9:30 PM',
+    name: 'Palliyarai Pooja',
+    tamil: 'பள்ளியறை பூஜை',
+    subtitle: 'Shodashi',
+    time: '09:30 PM – 10:00 PM',
     description: 'The final pooja of the day. The deities are ceremonially put to rest with sacred rituals.',
     icon: '🌟',
   },
@@ -129,69 +144,176 @@ export const festivals = [
 ];
 
 /**
- * Entry passes for special darshan and attractions.
- * ⚠️ TODO: Update prices and types from the official counter / website.
+ * Special entry passes — prices from the official HR & CE ticketing portal.
+ * Source: maduraimeenakshi.hrce.tn.gov.in/ticketing (tid=31962)
  */
 export const passes = [
   {
-    type: 'Special Darshan',
-    price: '₹50',
-    description: 'Priority queue access for darshan of Sri Meenakshi and Sri Sundareswarar.',
-    note: 'Available at counter 9, near East Gopuram.',
+    type: 'Special Entry — Amman & Swami',
+    price: '₹100',
+    description: 'Priority special entry darshan for both Sri Meenakshi Amman and Sri Sundareswarar sanctums.',
+    note: 'சிறப்பு நுழைவு அம்மன் மற்றும் ஸ்வாமி — book via official HR & CE portal.',
     icon: '🎫',
     available: true,
   },
   {
-    type: 'Heritage Museum Pass',
-    price: '₹5',
-    description: 'Entry to the Temple Art Museum showcasing ancient bronze idols and temple artefacts.',
-    note: 'Museum open 6:00 AM – 8:00 PM.',
-    icon: '🏛️',
-    available: true,
-  },
-  {
-    type: 'Rooftop View Pass',
+    type: 'Special Entry — Amman or Swami',
     price: '₹50',
-    description: 'Access to the rooftop gallery offering a panoramic view of the gopurams.',
-    note: 'Last entry 30 minutes before temple closing.',
-    icon: '🗼',
+    description: 'Priority special entry darshan for either Sri Meenakshi Amman or Sri Sundareswarar (one sanctum).',
+    note: 'சிறப்பு நுழைவு அம்மன் அல்லது ஸ்வாமி — book via official HR & CE portal.',
+    icon: '🎟️',
     available: true,
-  },
-  {
-    type: 'VIP / Archanai Package',
-    price: '⚠️ Contact Temple Office',
-    description: 'Exclusive VIP darshan combined with personalised archanai (prayer) performed by temple priests.',
-    note: 'Book in advance at the temple office.',
-    icon: '✨',
-    available: false,
   },
 ];
 
 /**
- * Ticket types for the temple premises.
- * ⚠️ TODO: Verify current prices with temple administration.
+ * Complete official temple service fees.
+ * Source: maduraimeenakshi.hrce.tn.gov.in (action=pooja_info) — 16 services.
  */
 export const tickets = [
   {
     type: 'General Darshan',
+    tamil: '',
     price: 'Free',
     description: 'Standard entry to the main sanctum. No ticket required — open to all devotees.',
     icon: '🙏',
     highlight: true,
+    category: 'Entry',
   },
   {
-    type: 'Photography Permit',
-    price: '₹50',
-    description: 'Permit to carry a camera inside permitted areas of the temple complex.',
-    icon: '📷',
-    highlight: false,
-  },
-  {
-    type: 'Video Permit',
+    type: 'Special Entry — Amman & Swami',
+    tamil: 'சிறப்பு நுழைவு அம்மன் மற்றும் சுவாமி',
     price: '₹100',
-    description: 'Permit for video recording in designated non-sanctum areas.',
-    icon: '🎥',
+    description: 'Priority special darshan entry to both Sri Meenakshi Amman and Sri Sundareswarar sanctums.',
+    icon: '🎫',
     highlight: false,
+    category: 'Entry',
+  },
+  {
+    type: 'Special Entry — Amman or Swami',
+    tamil: 'சிறப்பு நுழைவு அம்மன் அல்லது சுவாமி',
+    price: '₹50',
+    description: 'Priority special darshan entry to either Sri Meenakshi Amman or Sri Sundareswarar (one sanctum).',
+    icon: '🎟️',
+    highlight: false,
+    category: 'Entry',
+  },
+  {
+    type: 'Archanai',
+    tamil: 'அர்ச்சனை',
+    price: '₹5',
+    description: 'Personal prayer and archanai performed by temple priests in your name.',
+    icon: '🪔',
+    highlight: false,
+    category: 'Prayer',
+  },
+  {
+    type: 'Annai Tamil Archanai',
+    tamil: 'அன்னை தமிழ் அர்ச்சனை',
+    price: '₹5',
+    description: 'Archanai recited in Tamil in the name of the Goddess.',
+    icon: '🪔',
+    highlight: false,
+    category: 'Prayer',
+  },
+  {
+    type: 'Abhirami Andhadhi',
+    tamil: 'அபிராமி அந்தாதி',
+    price: '₹10',
+    description: 'Recitation of the 100-verse Abhirami Andhadhi hymn in honour of Goddess Meenakshi.',
+    icon: '📿',
+    highlight: false,
+    category: 'Prayer',
+  },
+  {
+    type: 'Thiruvilakku Pooja',
+    tamil: 'திருவிளக்கு பூஜை',
+    price: '₹200',
+    description: 'Sacred lamp-lighting pooja offered in dedication to the presiding deity.',
+    icon: '🕯️',
+    highlight: false,
+    category: 'Prayer',
+  },
+  {
+    type: 'Maavilakku',
+    tamil: 'மாவிளக்கு',
+    price: '₹2',
+    description: 'Traditional lamp offering made from rice flour (maa), lit before the deity.',
+    icon: '🔆',
+    highlight: false,
+    category: 'Prayer',
+  },
+  {
+    type: 'Siddhar Pushpa Koodaram',
+    tamil: 'சித்தர் புஷ்ப கூடாரம்',
+    price: '₹500',
+    description: 'Decorative flower canopy offering at the Siddhar shrine within the temple complex.',
+    icon: '🌸',
+    highlight: false,
+    category: 'Offering',
+  },
+  {
+    type: 'Ubaya Thirukalyanam',
+    tamil: 'உபய திருக்கல்யாணம்',
+    price: '₹1,501',
+    description: 'Sponsor the celestial wedding ceremony of Goddess Meenakshi and Lord Sundareswarar.',
+    icon: '👑',
+    highlight: false,
+    category: 'Seva',
+  },
+  {
+    type: 'Ubaya Thangaratham',
+    tamil: 'உபய தங்கரதம்',
+    price: '₹1,501',
+    description: 'Sponsor the golden chariot (Thangaratham) procession of the presiding deities.',
+    icon: '🏆',
+    highlight: false,
+    category: 'Seva',
+  },
+  {
+    type: 'Kalyanam',
+    tamil: 'கல்யாணம்',
+    price: '₹100',
+    description: 'Register a wedding ceremony to be conducted within the temple premises.',
+    icon: '💍',
+    highlight: false,
+    category: 'Marriage',
+  },
+  {
+    type: 'Kalyanam Thamboolam',
+    tamil: 'கல்யாணம் தாம்பூலம்',
+    price: '₹50',
+    description: 'Thamboolam (betel leaf offering) as part of the Kalyanam ceremony.',
+    icon: '🌿',
+    highlight: false,
+    category: 'Marriage',
+  },
+  {
+    type: 'Marriage Application Form',
+    tamil: 'திருமண விண்ணப்ப படிவம்',
+    price: '₹10',
+    description: 'Application form for scheduling a marriage ceremony at the temple.',
+    icon: '📋',
+    highlight: false,
+    category: 'Marriage',
+  },
+  {
+    type: 'Cloak Room',
+    tamil: 'பொருட்கள் பாதுகாப்பு அறை கட்டணம்',
+    price: '₹2',
+    description: 'Secure storage for belongings and luggage within the temple premises.',
+    icon: '🧳',
+    highlight: false,
+    category: 'Facility',
+  },
+  {
+    type: 'Mobile Phone Storage',
+    tamil: 'கைபேசி பாதுகாப்பு கட்டணம்',
+    price: '₹5',
+    description: 'Secure deposit for mobile phones before entering the main sanctum.',
+    icon: '📱',
+    highlight: false,
+    category: 'Facility',
   },
 ];
 
@@ -555,6 +677,76 @@ export const history = {
     { label: 'Managed By', value: 'HR & CE Dept, Govt of Tamil Nadu' },
   ],
 };
+
+/**
+ * Bookable Abhishekam (ritual bathing) services — from the official HR & CE ticketing portal.
+ * Source: maduraimeenakshi.hrce.tn.gov.in/ticketing (tid=31962)
+ */
+export const abhishekams = [
+  {
+    type: 'Amman Swami Abhishekam',
+    tamil: 'அருள்மிகு அம்மன் சுவாமி அபிஷேகம்',
+    deity: 'Sri Meenakshi Amman & Sri Sundareswarar',
+    price: '₹1,300',
+    icon: '🪷',
+    description: 'Sacred ritual bathing (abhishekam) performed for both the presiding deities — Sri Meenakshi Amman and Sri Sundareswarar.',
+    availability: '11/03/2026 – 06/04/2026',
+  },
+  {
+    type: 'Agni Veerabadrar Abhishekam',
+    tamil: 'அருள்மிகு அக்னி வீரபத்ரர் அபிஷேகம்',
+    deity: 'Sri Agni Veerabadrar',
+    price: '₹1,000',
+    icon: '🔥',
+    description: 'Abhishekam performed for Sri Agni Veerabadrar, the fierce form of Lord Shiva.',
+    availability: '10/03/2026 – 06/04/2026',
+  },
+  {
+    type: 'Aghora Veerabadrar Abhishekam',
+    tamil: 'அருள்மிகு அகோரவீரபத்ரர் அபிஷேகம்',
+    deity: 'Sri Aghora Veerabadrar',
+    price: '₹1,000',
+    icon: '⚡',
+    description: 'Abhishekam performed for Sri Aghora Veerabadrar, the auspicious and powerful manifestation.',
+    availability: '11/03/2026 – 06/04/2026',
+  },
+  {
+    type: 'Bhadrakali Amman Abhishekam',
+    tamil: 'அருள்மிகு பத்ரகாளி அம்மன் அபிஷேகம்',
+    deity: 'Sri Bhadrakali Amman',
+    price: '₹1,000',
+    icon: '🌺',
+    description: 'Abhishekam for Sri Bhadrakali Amman, the protective goddess enshrined within the temple complex.',
+    availability: '11/03/2026 – 06/04/2026',
+  },
+  {
+    type: 'Durgai Amman Abhishekam',
+    tamil: 'அருள்மிகு துர்கை அம்மன் அபிஷேகம்',
+    deity: 'Sri Durgai Amman',
+    price: '₹550',
+    icon: '⚔️',
+    description: 'Abhishekam for Sri Durgai Amman, the invincible goddess of strength and protection.',
+    availability: '10/03/2026 – 06/04/2026',
+  },
+  {
+    type: 'Saraswati Amman Abhishekam',
+    tamil: 'அருள்மிகு சரஸ்வதி அம்மன் அபிஷேகம்',
+    deity: 'Sri Saraswati Amman',
+    price: '₹550',
+    icon: '🎵',
+    description: 'Abhishekam for Sri Saraswati Amman, the goddess of knowledge, arts, and wisdom.',
+    availability: '11/03/2026 – 06/04/2026',
+  },
+  {
+    type: 'Anukkai Vinayagar Abhishekam',
+    tamil: 'அருள்மிகு அனுக்கை விநாயகர் அபிஷேகம்',
+    deity: 'Sri Anukkai Vinayagar',
+    price: '₹550',
+    icon: '🐘',
+    description: 'Abhishekam for Sri Anukkai Vinayagar, the auspicious elephant-headed deity of beginnings.',
+    availability: '10/03/2026 – 06/04/2026',
+  },
+];
 
 /** The 12 gopurams (gateway towers) of the temple complex. */
 export const gopurams = [

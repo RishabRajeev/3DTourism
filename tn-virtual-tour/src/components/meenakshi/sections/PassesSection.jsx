@@ -1,6 +1,9 @@
 import { passes } from '../../../data/meenakshi';
 
-export default function PassesSection() {
+/**
+ * @param {{ onProceedToPayment: (item: object) => void }} props
+ */
+export default function PassesSection({ onProceedToPayment }) {
   return (
     <div className="space-y-6">
       <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
@@ -42,8 +45,11 @@ export default function PassesSection() {
             </div>
 
             {pass.available ? (
-              <button className="w-full mt-1 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 rounded-lg text-sm transition-colors cursor-pointer">
-                Get Pass
+              <button
+                onClick={() => onProceedToPayment({ ...pass, category: 'Pass' })}
+                className="w-full mt-1 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 rounded-lg text-sm transition-colors cursor-pointer flex items-center justify-center gap-2"
+              >
+                Get Pass <span>→ Pay</span>
               </button>
             ) : (
               <button

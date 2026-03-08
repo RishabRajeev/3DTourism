@@ -1,6 +1,9 @@
 import { sevas } from '../../../data/meenakshi';
 
-export default function SevaSection() {
+/**
+ * @param {{ onProceedToPayment: (item: object) => void }} props
+ */
+export default function SevaSection({ onProceedToPayment }) {
   const { undiyal, annadhanam } = sevas;
 
   return (
@@ -37,8 +40,17 @@ export default function SevaSection() {
             {undiyal.note}
           </div>
 
-          <button className="mt-4 w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-colors cursor-pointer">
-            Donate via Undiyal Seva
+          <button
+            onClick={() => onProceedToPayment({
+              icon: undiyal.icon,
+              type: undiyal.title,
+              description: 'Sacred donation to the temple charity box.',
+              price: 'Any amount',
+              category: 'Seva',
+            })}
+            className="mt-4 w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-colors cursor-pointer flex items-center justify-center gap-2"
+          >
+            Donate via Undiyal Seva <span>→ Pay</span>
           </button>
         </div>
       </div>
@@ -89,8 +101,17 @@ export default function SevaSection() {
             </span>
           </div>
 
-          <button className="mt-4 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition-colors cursor-pointer">
-            Sponsor Annadhanam Seva
+          <button
+            onClick={() => onProceedToPayment({
+              icon: annadhanam.icon,
+              type: annadhanam.title,
+              description: 'Sponsor a day\'s free meal for pilgrims and the needy.',
+              price: '⚠️ Contact temple for cost',
+              category: 'Seva',
+            })}
+            className="mt-4 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition-colors cursor-pointer flex items-center justify-center gap-2"
+          >
+            Sponsor Annadhanam Seva <span>→ Pay</span>
           </button>
         </div>
       </div>
